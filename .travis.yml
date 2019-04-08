@@ -5,4 +5,9 @@ php:
   - 7.2
   - 7.3
 
-script: phpunit
+before_script:
+  - curl -s http://getcomposer.org/installer | php
+  - php composer.phar install --dev --prefer-source
+
+script:
+  - phpunit --coverage-text
