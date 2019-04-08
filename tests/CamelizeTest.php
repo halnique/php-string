@@ -18,6 +18,10 @@ class CamelizeTest extends TestCase
                 'expected' => 'aaaBbb',
                 'actual' => 'aaa bbb',
             ],
+            'aaa   bbb' => [
+                'expected' => 'aaaBbb',
+                'actual' => 'aaa   bbb',
+            ],
             'aaa-bbb' => [
                 'expected' => 'aaaBbb',
                 'actual' => 'aaa-bbb',
@@ -26,9 +30,17 @@ class CamelizeTest extends TestCase
                 'expected' => 'aaaBbb',
                 'actual' => 'aaa_bbb',
             ],
+            'aaa_bbb-ccc ddd' => [
+                'expected' => 'aaaBbbCccDdd',
+                'actual' => 'aaa_bbb-ccc ddd',
+            ],
             'AAABBB' => [
                 'expected' => 'aAABBB',
                 'actual' => 'AAABBB',
+            ],
+            'Aaabbb' => [
+                'expected' => 'aaabbb',
+                'actual' => 'Aaabbb',
             ],
         ];
     }
@@ -46,9 +58,37 @@ class CamelizeTest extends TestCase
     public function upperData(): array
     {
         return [
+            'aaabbb' => [
+                'expected' => 'Aaabbb',
+                'actual' => 'aaabbb',
+            ],
             'aaa bbb' => [
-                'expected' => '',
-                'actual' => '',
+                'expected' => 'AaaBbb',
+                'actual' => 'aaa bbb',
+            ],
+            'aaa   bbb' => [
+                'expected' => 'AaaBbb',
+                'actual' => 'aaa   bbb',
+            ],
+            'aaa-bbb' => [
+                'expected' => 'AaaBbb',
+                'actual' => 'aaa-bbb',
+            ],
+            'aaa_bbb' => [
+                'expected' => 'AaaBbb',
+                'actual' => 'aaa_bbb',
+            ],
+            'aaa_bbb-ccc ddd' => [
+                'expected' => 'AaaBbbCccDdd',
+                'actual' => 'aaa_bbb-ccc ddd',
+            ],
+            'AAABBB' => [
+                'expected' => 'AAABBB',
+                'actual' => 'AAABBB',
+            ],
+            'Aaabbb' => [
+                'expected' => 'Aaabbb',
+                'actual' => 'Aaabbb',
             ],
         ];
     }
