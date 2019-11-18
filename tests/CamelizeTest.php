@@ -1,9 +1,8 @@
 <?php
 
-namespace HalniqueTest\Slack\String;
+namespace HalniqueTest\String;
 
 use Halnique\String\Camelize;
-use HalniqueTest\String\TestCase;
 
 class CamelizeTest extends TestCase
 {
